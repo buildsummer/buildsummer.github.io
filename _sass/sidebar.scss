@@ -189,12 +189,12 @@
 @include mq(tablet){
 
 .side-banner {
-  button { font-size:1.75rem; }
+  button { font-size:1.75rem;  }
   #btn-search { right:60px; }
   #btn-brightness { right:120px; }
+//  position:fixed;
 }
-
-.site-tab { 
+.site-tab {
   padding:1rem;
   font-size:1.375rem; 
 }
