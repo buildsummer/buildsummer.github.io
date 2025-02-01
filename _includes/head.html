@@ -42,6 +42,34 @@
 }
 </style>
 
+<!-- MathJax 라이브러리 추가 -->
+<script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<!-- MathJax 설정 -->
+<script type="text/javascript">
+    window.addEventListener('load', function() {
+        if (typeof MathJax !== 'undefined') {
+            MathJax.Hub.Config({
+                tex2jax: {
+                    inlineMath: [['$', '$']],  // 인라인 수식: $ 수식
+                    displayMath: [['$', '$']]  // 블록 수식: $ 수식
+                }
+            });
+
+            MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+        }
+    });
+</script>
+
+<!-- 인라인 수식 스타일 변경 (가운데 정렬 방지) -->
+<style>
+    .mjx-chtml {
+        text-align: left !important; /* 모든 MathJax 수식 왼쪽 정렬 */
+    }
+</style>
+
 <script src="{{ '/assets/js/fontfaceobserver.js' | prepend: site.baseurl }}" type="text/javascript"></script>
 <script type="text/javascript">
     const nunitoObserver = new FontFaceObserver('Nunito Sans');
