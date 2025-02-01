@@ -48,7 +48,14 @@ defaults:
       layout: "page"
       date: "1900-01-01"
 
-# Markdown newline activator 
+# Conversion
+markdown: kramdown
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
+
+# Markdown newline activator
 kramdown:
   input: GFM
   hard_wrap: true

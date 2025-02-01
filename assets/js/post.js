@@ -195,17 +195,6 @@ window.addEventListener('load', function(){
         document.body.appendChild(giscusScript);
     }
 
-    if (typeof MathJax !== 'undefined') {
-        MathJax.Hub.Config({
-            tex2jax: {
-                inlineMath: [['$', '$']],  // 인라인 수식: $ 수식
-                displayMath: [['$', '$']]  // 블록 수식: $ 수식
-            }
-        });
-
-        // MathJax 렌더링 처리
-        MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
-    }
 
     // code clipboard copy button
     async function copyCode(block) {

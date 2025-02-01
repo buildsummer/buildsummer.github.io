@@ -42,33 +42,6 @@
 }
 </style>
 
-<!-- MathJax 라이브러리 추가 -->
-<script type="text/javascript" async
-    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
-
-<!-- MathJax 설정 -->
-<script type="text/javascript">
-    window.addEventListener('load', function() {
-        if (typeof MathJax !== 'undefined') {
-            MathJax.Hub.Config({
-                tex2jax: {
-                    inlineMath: [['$', '$']],  // 인라인 수식: $ 수식
-                    displayMath: [['$', '$']]  // 블록 수식: $ 수식
-                }
-            });
-
-            MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
-        }
-    });
-</script>
-
-<!-- 인라인 수식 스타일 변경 (가운데 정렬 방지) -->
-<style>
-    .mjx-chtml {
-        text-align: left !important; /* 모든 MathJax 수식 왼쪽 정렬 */
-    }
-</style>
 
 <script src="{{ '/assets/js/fontfaceobserver.js' | prepend: site.baseurl }}" type="text/javascript"></script>
 <script type="text/javascript">
@@ -89,3 +62,42 @@
 <meta
 name="description"
 content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+
+
+
+<!-- MathJax 라이브러리 추가 -->
+<script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+<!-- MathJax 설정 -->
+<script type="text/javascript">
+    window.addEventListener('load', function() {
+        if (typeof MathJax !== 'undefined') {
+            MathJax.Hub.Config({
+                tex2jax: {
+                    inlineMath: [['$', '$'], ['\\(', '\\)']],
+                    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                    processEscapes: true
+                }
+            });
+
+            MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+        }
+    });
+</script>
+
+<!--&lt;!&ndash; 인라인 수식 스타일 변경 (가운데 정렬 방지) &ndash;&gt;-->
+<!--<style>-->
+<!--    /* 인라인 수식 왼쪽 정렬 */-->
+<!--    .mjx-chtml .mjx-math {-->
+<!--        text-align: left !important;  /* 인라인 수식 왼쪽 정렬 */-->
+<!--        display: inline !important;   /* 인라인 수식이 블록처럼 처리되지 않도록 */-->
+<!--    }-->
+
+<!--    /* 블록 수식 가운데 정렬 */-->
+<!--    .mjx-chtml .mjx-display {-->
+<!--        text-align: center !important; /* 블록 수식 가운데 정렬 */-->
+<!--    }-->
+<!--</style>-->
