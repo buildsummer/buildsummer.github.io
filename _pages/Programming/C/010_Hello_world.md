@@ -1,6 +1,6 @@
 ---
 title: Hello, World!
-date: 2025-02-02T00:00:00Z
+date: 2025-02-02 000000
 ---
 ---
 # Basic
