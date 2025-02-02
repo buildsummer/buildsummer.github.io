@@ -1,12 +1,11 @@
 ---
 title: Hello, World!
 date: 2025-02-02 00:00:00
-thumbnail: "/assets/img/example.jpg"
 ---
 ---
-# 1. Basic
+# Basic
 ---
-### 1.1 Hello, World!
+### Hello, World!
 * stdio.h : standard input output header
 * c는 호출한 프로그램(또는 OS)에 return (0 = success)
 * #include
