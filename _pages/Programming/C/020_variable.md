@@ -11,6 +11,7 @@ date: 2025-02-02 180000
   * 타입이 제일 마지막에 정해진다
 * char는 연산에 포함되면 그냥 정수형으로 취급되기 때문에 주의할 것
   * char도 unsigned 지정이 가능함
+* float, double, long double은 _Complex와 같이 사용하면 복소수형으로 할당 가능
 
 |Name       |byte  |Range             |
 |:---------:|:----:|------------------|
@@ -24,16 +25,17 @@ date: 2025-02-02 180000
 |double     |8     | ±1.7e{±308}(15digits)|
 |long double|유동  | ±1.7e{±308}(15digits)|
 
-* float, double, long double은 _Complex와 같이 사용하면 복소수형으로 할당 가능
-* 포맷 지정자
-  * int  : %{n}d
-  * long int : %ld, d로 작동 안 한다
-    * **<font color ='ff8000'>int -> long int</font>**로 바꾸더라도 printf를 전부 신경써야 한다
-  * float, double : %{n.m}f
+---
+# 포맷 지정자
+---
+* int  : %{n}d
+* long int : %ld, d로 작동 안 한다
+  * **<font color ='ff8000'>int -> long int</font>**로 바꾸더라도 printf를 전부 신경써야 한다
+* float, double : %{n.m}f
 
 
 ---
-###1.14 상수
+# const 상수
 ---
 * 최초 선언 이후 변수를 바꿀 수 없고 바꾸면 에러 발생
   * const (변수형) (변수명) = (값);
@@ -46,8 +48,6 @@ date: 2025-02-02 180000
   * 섞어서 쓸 수도 있음 10 + 015 + 0x20
 
 ```c
-#include <stdio.h>
-
 int main() {
     int int_v = 123;
     int int_v2 = 12345;
@@ -57,15 +57,13 @@ int main() {
     printf("%%5d using int means pad 5 : %5d \n", int_v2);
     printf("%%5.2f using double        : %5.2f \n", double_v);
     printf("%%.25f using double        : %.25f \n", double_v);
-    printf("이건 부동소수점문제 \n");
-    return 0;
+}
 ```
 ```text
 %5d using int means pad 5 :   123 
 %5d using int means pad 5 : 12345 
 %5.2f using double        : 123.12 
-%.25f using double        : 123.1231230000000067548171501 
-이건 부동소수점문제 
+%.25f using double        : 123.1231230000000067548171501  <- 이건 부동소수점문제 
 ```
 
 ---
@@ -85,8 +83,6 @@ int main() {
   * unsigned int에 -1 넣으면 4,294,967,295
 
 ```c
-#include <stdio.h>
-
 int main() {
     int a = 2147483647;
     unsigned int b = 4294967295;
@@ -96,7 +92,6 @@ int main() {
     printf("b : %u \n", b++);
     printf("b : %u \n", b--);
     printf("b : %u \n", b);
-    return 0;
 }
 ```
 
@@ -111,7 +106,7 @@ b : 4294967295
 ---
 ###1.7 오버플로우
 * 메모리 내에서 표현 가능한 수치를 넘어섰을 때 잘못된 수치가 표기되는 것
-* <font color = 'ff8000'>**잡을 수 있는 방법이 없으므로 코딩을 잘해야 함**</font>
+* <font color = 'ff8000'><b>잡을 수 있는 방법이 없으므로 코딩을 잘해야 함</b></font>
 * 오버플로우 : 수치연산에서 최대값이나 최소값을 초과(버림 발생)
 * 버퍼 오버플로우 : 할당한 메모리공간을 초과하였을 경우, 다른 메모리 영역에 데이터를 덮어씌워 시스템 크래시 등 오류를 야기
   * 보안상 취약점이며 공격자들이 의도적으로 조작 가능
