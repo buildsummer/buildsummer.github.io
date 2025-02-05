@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', function(){
                         var codeContent = code.textContent;
             
                         // %d를 &#37;로 변환
-                        var escapedCodeContent = codeContent.replace(/%/g, '&#37;');
+                        var escapedCodeContent = codeContent.replace('%', '\%');
             
                         // 변환된 코드 내용을 다시 적용
                         code.textContent = escapedCodeContent;
