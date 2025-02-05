@@ -62,4 +62,4 @@ kramdown:
   syntax_highlighter: rouge
   syntax_highlighter_opts:
     guess_lang: false
-    escape_html: false  # 이 부분이 중요합니다
+    escape_html: true
