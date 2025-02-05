@@ -94,25 +94,7 @@ document.addEventListener('DOMContentLoaded', function(){
             const sunIcons = document.querySelectorAll(".ico-light");
             const codeblocks = innerContent != null ? innerContent.querySelectorAll('pre') : null;
             
-            if (codeblocks) {
-                codeblocks.forEach(function(codeblock) {
-                    // 코드 블록 내의 <code> 요소들을 모두 찾음
-                    codeblock.querySelectorAll('code').forEach(function(code) {
-                        // code.textContent를 사용하여 코드 내용을 가져오기
-                        var codeContent = code.textContent;
-            
-                        // %d를 &#37;로 변환
-                        var escapedCodeContent = codeContent.replace(/%/g, '&#37;');
-            
-                        // 변환된 코드 내용을 다시 codeblock 내에 넣기
-                        // innerHTML을 사용하여 HTML 엔티티가 적용된 상태로 다시 넣음
-                        code.innerHTML = escapedCodeContent;
-                    });
-                });
-            }
 
-
-            
             moonIcons.forEach((ico) => {
                 ico.classList.toggle('active');
             });
