@@ -248,9 +248,11 @@ main {
     border:1px solid #eaeaea;
     border-radius:3px;
     margin:8px auto;
+    padding: 0; /* 여백 줄임*/
 
     pre {
       margin:0;
+      padding: 0.5em; /*여백 줄임*/
       border:none;
       overflow-x:auto;
       position:relative;
