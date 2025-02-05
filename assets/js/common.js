@@ -93,28 +93,24 @@ document.addEventListener('DOMContentLoaded', function(){
             const moonIcons = document.querySelectorAll(".ico-dark");
             const sunIcons = document.querySelectorAll(".ico-light");
             const codeblocks = innerContent != null ? innerContent.querySelectorAll('pre') : null;
-
-            // 코드블록 % 이스케이핑
+            
             if (codeblocks) {
                 codeblocks.forEach(function(codeblock) {
-                    // 기존 코드 처리 (기존 로직, 예: 하이라이팅 처리 등)
-                    codeblock.querySelectorAll('.hljs-keyword, .hljs-meta, .hljs-selector-tag').forEach(function($) {
-                        $.outerHTML = $.innerHTML;
-                    });
-            
-                    // 코드 블록 내의 %d와 같은 포맷 문자열을 이스케이프 처리
+                    // 코드 블록 내의 <code> 요소들을 모두 찾음
                     codeblock.querySelectorAll('code').forEach(function(code) {
-                        // code.textContent를 사용하여 코드 내용 가져오기
+                        // code.textContent를 사용하여 코드 내용을 가져오기
                         var codeContent = code.textContent;
             
                         // %d를 &#37;로 변환
-                        var escapedCodeContent = codeContent.replace('%', '\%');
+                        var escapedCodeContent = codeContent.replace(/%/g, '&#37;');
             
-                        // 변환된 코드 내용을 다시 적용
-                        code.textContent = escapedCodeContent;
+                        // 변환된 코드 내용을 다시 codeblock 내에 넣기
+                        // innerHTML을 사용하여 HTML 엔티티가 적용된 상태로 다시 넣음
+                        code.innerHTML = escapedCodeContent;
                     });
                 });
             }
+
 
             
             moonIcons.forEach((ico) => {
