@@ -144,3 +144,42 @@ int main() {
 ```text
 123
 ```
+
+---
+#5. 기타
+---
+###5.1 공용체 union
+* 각 멤버의 <font color = 'ff8000'>**메모리 시작주소가 모두 동일**</font>하여 서로 영향을 받음
+* 아래 코드에서 a.j가 78로 출력되는 이유
+  * 메모리에 수를 저장하는 방법 빅엔디안, 리틀엔디안
+    * 빅엔디안   : 읽는순서대로 저장
+    * 리틀엔디안 : 역순으로 저장
+    * 대부분의 컴퓨터는 리틀엔디안 방식
+* 사실 공용체보다 <font color = 'ff8000'>**엔디안**</font>이 더 중요함
+
+```c
+#include <stdio.h>
+union A {
+    int i;
+    char j;
+    short k;
+};
+
+int main() {
+    union A a;
+    printf("union i : %p \n", &(a.i));
+    printf("union j : %p \n", &(a.j));
+    a.i = 0x12345678;
+    printf("j : %x \n", a.j);
+    printf("i : %x \n", a.i);
+    printf("k : %x \n", a.k);
+    return 0;
+}
+```
+```text
+union i : 0x7ffe48515114 
+union j : 0x7ffe48515114 
+j : 78 
+i : 12345678 
+k : 5678 
+```
