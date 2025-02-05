@@ -235,3 +235,42 @@ int main() {
 factorial number : 5
 factorial 5! : 120
 ```
+
+---
+###5.7 메인함수
+* main()은 사실 main(void)에서 void가 생략된 것
+* 메인함수의 인자
+  * 첫 번째 : 인자 개수
+  * 두 번째 : 각 인자를 가리키는 <font color = 'ff8000'>**포인터의 배열**</font>
+
+```c
+ char **argv
+ char* argv[]
+```
+* 인자의 첫 번째는 프로그램의 이름이다.
+* <font color = 'ff8000'>**각 인자는 문자열 리터럴임**</font>에 유의
+  * 그자체로 배열
+
+* exit()
+  * 어느 함수에서든 프로그램을 종료시킴
+
+```c
+#include <stdio.h>
+int main(int argc, char **argv) {
+    int i;
+    printf("받은 인자 개수 : %d \n", argc);
+
+    for (i = 0; i < argc; i ++) {
+        printf("받은 인자 %d : %s \n", i, argv[i]);
+    }
+
+}
+```
+```text
+받은 인자 개수 : 5 
+받은 인자 0 : ./A_out 
+받은 인자 1 : 1 
+받은 인자 2 : 2 
+받은 인자 3 : awdf 
+받은 인자 4 : ss 
+```
