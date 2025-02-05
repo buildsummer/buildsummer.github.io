@@ -24,3 +24,6 @@ int main() {
 ```text
 Hello, World!
 ```
+
+* 이후 작성 내용은 내용을 조금이라도 줄이기 위해 stdio include와 main의 return을 제외함
+  * 실제로는 꼭 해주어야함
