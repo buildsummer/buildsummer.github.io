@@ -32,7 +32,7 @@ date: 2025-02-02 183700
   * \~ (반전) : 0을 1로, 1을 0으로 변경
     * 빈공간이라서 0으로 표기된 메모리 공간까지 반전시킴
 
-{% highlight c %}
+```c
 int main() {
     int aa = 10, b = 1;
     double bb = 3;
@@ -54,7 +54,8 @@ int main() {
     printf("%x \n", a << 2);
     printf("%x \n", b >> 3);
 }
-{% endhighlight %}
+```
+
 ```text
 int / double = double : 3.333333 
 pure b : 1 
