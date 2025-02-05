@@ -61,6 +61,5 @@ kramdown:
   hard_wrap: true
   syntax_highlighter: rouge
   syntax_highlighter_opts:
-    default_lang: c
-    guess_lang: true
+    guess_lang: false
     escape_html: false  # 이 부분이 중요합니다
