@@ -36,7 +36,7 @@ date: 2025-02-02 183700
 int main() {
     int aa = 10, b = 1;
     double bb = 3;
-    printf("int / double = double : &#37;f \n", aa / bb); // 산술변환
+    printf("int / double = double : %f \n", aa / bb); // 산술변환
     printf("pure b : %d \n", b);
     printf("b += 1 : %d \n", b += 1);
     printf("b -= 1 : %d \n", b -= 1);
