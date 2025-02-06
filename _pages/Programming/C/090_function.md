@@ -3,9 +3,8 @@ title: 함수
 date: 2025-02-05 130005
 ---
 ---
-#2. Advanced : Function
----
-###2.1 함수
+# 함수
+
 * 함수 이름은 20자 안팎으로 하자
 * 함수 내용을 Body라고 지칭
 * return 하면 함수가 종료
@@ -19,7 +18,6 @@ date: 2025-02-05 130005
   * 단 prototype은 함수 안에서 쓸 수 있다 이러면 해당 함수에서만 호출 가능
 
 ```c
-#include <stdio.h>
 int print_hello() {
     printf("hello, World \n");
     return 0;
@@ -30,8 +28,6 @@ int main() {
     int ret_val;
     ret_val = print_hello();
     if (ret_val == 0) printf("Success! \n");
-
-    return 0;
 }
 ```
 
@@ -41,11 +37,10 @@ Success!
 ```
 
 ---
-###2.2 Input Parameter
+# Input Parameter
 * 인자를 상수로 받게 되면, 함수 내에서 인자의 변경이 허용되지 않음
 
 ```c
-#include <stdio.h>
 int slave(const int money) {
     //return money += 20000; 허용되지 아니함 money가 const이기 때문
     return money + 10000;
@@ -54,8 +49,6 @@ int slave(const int money) {
 int main() {
     int money = 10000;
     printf("돈 : %d \n", slave(money));
-
-    return 0;
 }
 ```
 
@@ -63,21 +56,18 @@ int main() {
 돈 : 20000 
 ```
 
-
 ---
-###2.3 Input Parameter With Pointer
+# Input Parameter With Pointer
 * 어떤 함수가 Caller 내의 값을 바꾸려면 포인터를 사용
   * 글로벌 변수가 없는 건 아니다
 * 인풋에 arr의 포인터를 넣는 경우 두 가지 표현 방식이 가능
   * 인풋에서만 가능한 표현식임
-
 ```c
 int aa(int (*a)[2])
 int aa(int a[][2])
 ```
 
 ```c
-#include <stdio.h>
 int change_val(int* pi) {
     *pi = 3;
     return 0;
@@ -88,7 +78,6 @@ int main() {
     printf("포인터 변경 전 %d \n", i);
     change_val(&i);
     printf("포인터 변경 후 %d \n", i);
-    return 0;
 }
 ```
 ```text
@@ -97,7 +86,7 @@ int main() {
 ```
 
 ---
-###2.4 Prototype
+# Prototype
 * 코드가 복잡해지면 코드가 항상 순차적으로 잘 짜여지지는 않음
   * 함수 정의 이전에 함수 호출이 발생할 경우 컴파일러는 암시적 선언을 하면서 대충 함수의 인자를 추론한다. 그러면 실제 함수랑 안 맞게 된다.
   * 선후순위 안지키고 코딩하면 컴파일이 되더(사실상 컴파일 오류임)라도 디버깅이 잘 안된다
@@ -110,17 +99,13 @@ int main() {
   * 그러므로 반드시 넣어야 함
 
 * 주의 : 함수의 input도 형이 안맞을 경우 형변환이 발생한다.
-
 * 함수에 배열을 줄 때는 배열의 크기도 같이 주어야 한다.
-
 * 가변크기배열을 매개변수로 입력하는 경우 아래와 같이 할 수도 있음
   * int get_sum_of_array(int size, int arr[size])
-
-* 배열 선언 시 static
-  * arr[static 3] : 최소 배열 크기가 3임을 특정
+  * 배열 선언 시 static
+    * arr[static 3] : 최소 배열 크기가 3임을 특정
 
 ```c
-#include <stdio.h>
 int pswap(int **pa, int **pb);
 int main1();
 int main2();
@@ -130,8 +115,6 @@ int main() {
     main1();
     printf("main2==================================\n");
     main2();
-
-    return 0;
 }
 int main1() {
     int a = 1, b = 2;
@@ -184,7 +167,7 @@ main2==================================
  3 번째 원소 값 : 7 
 ```
 ---
-###2.5 함수포인터
+# 함수포인터
 * 메모리상에 올라간 함수의 시작점을 가리키는 포인터
   * 포인터 선언 시 인풋까지 전부 정의해주어야 함
   * int (*pfunt)(int,int)
@@ -192,7 +175,6 @@ main2==================================
   * 배열인 경우    int (\*pfunt)(int (\*)[3])
 
 ```c
-#include <stdio.h>
 int max(int a, int b);
 int main() {
     int a =1, b = 2;
@@ -200,7 +182,6 @@ int main() {
     pmax = max;
     printf(" max(a,b) : %d \n", max(a, b));
     printf("pmax(a,b) : %d \n", pmax(a, b));
-    return 0;
 }
 int max(int a, int b) {
     if (a > b)
@@ -216,9 +197,8 @@ pmax(a,b) : 2
 ```
 
 ---
-###2.6 재귀
+# 재귀
 ```c
-#include <stdio.h>
 int recursive(int a) {
     if (a == 0 || a == 1) return 1;
     if (a > 0) return a * recursive(a-1);
@@ -237,33 +217,30 @@ factorial 5! : 120
 ```
 
 ---
-###5.7 메인함수
+# 메인함수
 * main()은 사실 main(void)에서 void가 생략된 것
 * 메인함수의 인자
   * 첫 번째 : 인자 개수
-  * 두 번째 : 각 인자를 가리키는 <font color = 'ff8000'>**포인터의 배열**</font>
+  * 두 번째 : 각 인자를 가리키는 <font color = 'ff8000'><b>포인터의 배열</b></font>
 
 ```c
  char **argv
  char* argv[]
 ```
 * 인자의 첫 번째는 프로그램의 이름이다.
-* <font color = 'ff8000'>**각 인자는 문자열 리터럴임**</font>에 유의
+* <font color = 'ff8000'><b>각 인자는 문자열 리터럴임</b></font>에 유의
   * 그자체로 배열
 
 * exit()
   * 어느 함수에서든 프로그램을 종료시킴
 
 ```c
-#include <stdio.h>
 int main(int argc, char **argv) {
     int i;
     printf("받은 인자 개수 : %d \n", argc);
-
     for (i = 0; i < argc; i ++) {
         printf("받은 인자 %d : %s \n", i, argv[i]);
     }
-
 }
 ```
 ```text
