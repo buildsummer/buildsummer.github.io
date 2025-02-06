@@ -54,8 +54,7 @@
     {%- endfor -%}
 </div>
 <main>
-    
-    {{ content | replace: '```c', '{% highlight c %}' | replace: '```text', '{% highlight text %}' | replace: '```', '{% endhighlight %}' }}
+    {{ content }}
     <!-- see https://giscus.app/ -->
     <div class="giscus" id="giscus" style="margin: 4rem auto;"></div>
 
