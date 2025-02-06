@@ -63,4 +63,3 @@ kramdown:
   syntax_highlighter_opts:
     guess_lang: false  # 자동 언어 추측 비활성화
     escape_html: true  # HTML 이스케이프 활성화
-    lexer: "c"  # 기본 언어 지정
