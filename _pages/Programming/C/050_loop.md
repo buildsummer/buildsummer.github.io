@@ -3,7 +3,7 @@ title: 반복문
 date: 2025-02-02 184500
 ---
 ---
-###1.11 반복문
+# 반복문
 * for (초기식;조건식;증감식) {}
 * while (조건식) {}
   * do {} while (조건식) : 로직 후에 조건 검사 = 한 번은 무조건 실행됨
@@ -12,7 +12,7 @@ date: 2025-02-02 184500
 * switch : 동일한 변수에 대한 반복문
   * switch (변수){ case "b": ... case "a": ... default: }
   * char, short, int, long 중에 하나만 가능(=정수류만 가능)
-  * <font color = 'ff8000'>**매 case 마다 break 필수**</font>, 안하면 해당 case 밑의 모든 명령이 실행됨
+  * <font color = 'ff8000'><b>매 case 마다 break 필수</b></font>, 안하면 해당 case 밑의 모든 명령이 실행됨
   * case의 값 크기가 크지 않고, **순차 정렬**, 값끼리 차이가 크지 않으면 성능이 훨씬 좋음
 
 ```c
