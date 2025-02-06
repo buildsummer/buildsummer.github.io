@@ -22,6 +22,7 @@ date: 2025-02-05 131100
 
 * 배열에는 필수로 들어가기 때문에 배열의 크기는 항상 문자열 수 + 1이어야 함
   * 관용구
+
 ```c
 #define STR_LEN (80)
 …
@@ -31,6 +32,7 @@ char str[STR_LEN + 1];
 * <font color="skyblue"><b>따옴표</b></font>
   * 작은따옴표 : 문자열 하나만 지정할때
   * 큰따옴표 : 여러 문자열 지정할 때 = <font color = 'ff8000'><b>널스트링 자동포함</b></font>
+
 ```c
 int main() {
     char null_1 = '\0';
