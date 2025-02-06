@@ -3,7 +3,7 @@ title: 형변환
 date: 2025-02-02 184700
 ---
 ---
-###1.12 형 변환 Type casting
+# 형 변환 Type casting
 * 실수 표현
   * 고정 소수점 fixed point
   * 부동 소수점 floating point
@@ -30,12 +30,9 @@ date: 2025-02-02 184700
     * 가수 <> 0, 지수 = 0             -> 비정상 수 = $2^{-127}$ 보다 작은 수
     * 가수 <> 0, 지수 = $2^{e-1} - 1$ -> NaN       = 값을 정할 수 없는 연산 = 0/0, $\infty - \infty$
     * 가수  = 0, 지수 = $2^{e-1} - 1$ -> $\infty$
-
 * 형변환 : (바꾸는 형) 변수이름
 
 ```c
-#include <stdio.h>
-
 int main() {
     int a;
     double b = 2.4;
@@ -55,8 +52,6 @@ int main() {
     d = (double)e / f;
     printf("형변환 안한 5/3 연산 %f \n", c); // silent error, 실제로 컴파일러에서 이부분에서 경고를 뱉을 수 있음
     printf("형변환   한 5/3 연산 %f \n", d); // silent error, 실제로 컴파일러에서 이부분에서 경고를 뱉을 수 있음
-
-    return 0;
 }
 ```
 ```text
