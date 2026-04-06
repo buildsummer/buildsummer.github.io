@@ -250,6 +250,18 @@ main {
     margin:1px auto;
     padding: 0; /* 여백 줄임 */
 
+    /* syntax highlighting start */
+    color: #333; 
+    .c, .cm, .c1, .cs { color: #228b22 !important; font-style: italic !important; } // 주석을 초록색으로 변경
+    .k, .kd, .kn, .kp, .kr, .kt { color: #000000 !important; font-weight: bold !important; } 
+    .m, .mi, .mf { color: #009999 !important; } 
+    .s, .s1, .s2 { color: #d14 !important; } 
+    .na { color: #008080 !important; } 
+    .nb { color: #0086b3 !important; } 
+    .nc { color: #445588 !important; font-weight: bold !important; } 
+    .o { color: #000000 !important; font-weight: bold !important; } 
+    /* syntax highlighting end */
+
     pre {
       margin:0;
       padding: 0; /*여백 줄임*/
@@ -312,6 +324,7 @@ main {
       margin:0;
       padding:1.5rem 1rem;
       border:none;
+      color: inherit; 
     }
   }
 
@@ -580,11 +593,9 @@ main {
 
   h1, .sh1 {
     font-size:2.25rem;
-//     margin-top:1rem;
   }
   h2, .sh2 {
     font-size:1.75rem;
-//     margin-top:1rem;
   }
   h3, .sh3 {
     font-size:1.375rem;
