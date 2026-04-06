@@ -85,3 +85,16 @@ input::-webkit-search-results-decoration{
 @import "post";
 @import "search";
 @import "darkmode";
+
+/* =========================================
+   최종 폰트 강제 덮어쓰기 (여기에 추가!)
+   ========================================= */
+body, div, p, a, span, h1, h2, h3, h4, h5, h6, ul, ol, li, blockquote, code, pre, table, th, td, mark, input, textarea {
+  font-family: "D2Coding", monospace !important;
+  letter-spacing: 0 !important;
+  word-spacing: 0 !important;
+}
+
+.fonts-loaded * {
+  font-family: "D2Coding", monospace !important;
+}
