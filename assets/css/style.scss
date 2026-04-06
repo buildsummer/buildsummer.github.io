@@ -1,6 +1,7 @@
 ---
 ---
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap');
+/* 1. D2Coding 폰트 불러오기 */
+@import url('https://cdn.jsdelivr.net/gh/wan2land/d2coding/d2coding-full.css');
 
 $baseurl: "{{ site.baseurl }}";
 
@@ -11,22 +12,36 @@ html, body {
 
 /* 2. 폰트 로딩 완료 시 적용되는 부분 */
 .fonts-loaded {
-  a, span, p { font-family: "Nanum Gothic Coding", monospace; }
-  h1, h2, h3 { font-family: "Nanum Gothic Coding", monospace; }
-  mark { font-family: "Nanum Gothic Coding", monospace; }
+  a, span, p { font-family: "D2Coding", monospace; }
+  h1, h2, h3 { font-family: "D2Coding", monospace; }
+  mark { font-family: "D2Coding", monospace; }
 }
 
 a { text-decoration:none; }
 a, span, p, h1, h2, h3, i { color:#3A241A; }
 
-/* 3. 기본 상태의 폰트 설정 (중요) */
-a, span, p { font-family: "Nanum Gothic Coding", monospace; }
+/* 3. 기본 상태의 폰트 설정 및 장평(자간) 고정 */
+a, span, p { 
+  font-family: "D2Coding", monospace; 
+  letter-spacing: 0;
+  word-spacing: 0;
+}
+
 h1, h2, h3, mark {
   margin:0;
-  font-family: "Nanum Gothic Coding", monospace;
+  font-family: "D2Coding", monospace;
+  letter-spacing: 0;
+  word-spacing: 0;
 }
 
 mark { background-color:transparent; }
+
+/* 4. 코드 블록(Markdown)에도 동일하게 D2Coding 적용 */
+code, pre, kbd, samp {
+  font-family: "D2Coding", monospace;
+  letter-spacing: 0;
+  word-spacing: 0;
+}
 
 svg {
   width:16px;
